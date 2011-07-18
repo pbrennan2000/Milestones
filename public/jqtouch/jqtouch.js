@@ -374,10 +374,8 @@
 
             // Set full-screen
             if (jQTSettings.fullScreen) {
-                // hairExtensions += '<meta name="apple-mobile-web-app-capable" content="yes" />';
+                hairExtensions += '<meta name="apple-mobile-web-app-capable" content="yes" />';
                 
-                // PB - This metatag should be "true" and not "yes" 06.02.2011
-                hairExtensions += '<meta name="apple-mobile-web-app-capable" content="true" />';
                 if (jQTSettings.statusBar) {
                     hairExtensions += '<meta name="apple-mobile-web-app-status-bar-style" content="' + jQTSettings.statusBar + '" />';
                 }

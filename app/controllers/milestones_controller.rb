@@ -80,7 +80,7 @@ class MilestonesController < ApplicationController
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.mobile { redirect_to(@milestone, :notice => 'Milestone was successfully updated.') }  
+        format.mobile { render :action => "edit", :layout => false, :notice => 'Errors encountered, please correct them' }  
         format.xml  { render :xml => @milestone.errors, :status => :unprocessable_entity }
       end
     end
