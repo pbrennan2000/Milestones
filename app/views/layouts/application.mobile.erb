@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>Milestones</title>
+  <%= csrf_meta_tag %>
   <%= stylesheet_link_tag "/jqtouch/jqtouch.css", "/jqtouch/themes/apple/theme.css", "/sw/spinningwheel.css", "milestones" if mobile_device? %>
   <%= javascript_include_tag "/jqtouch/jquery-1.4.2.min.js", "/jqtouch/jqtouch.js", "/sw/spinningwheel.js", "milestones" if mobile_device? %>
-  <%= csrf_meta_tag %>
 
 
 </head>
-<body>
+<body id="jqt">
   <div class="current">
 	<%= yield %>
   </div>
