@@ -1,5 +1,6 @@
 var jQT = $.jQTouch({
 	icon: 'images/milestone_logo.png',
+	startupScreen: 'images/milestone_splashscreen.png'
 	addGlossToIcon: true, 
 	statusBar: 'black',
 	initialPageId: 'home',

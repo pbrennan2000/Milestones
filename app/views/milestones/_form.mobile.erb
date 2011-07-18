@@ -19,14 +19,12 @@
 		<li><%= f.text_area :description, :placeholder => 'Describe this milestone, the description will be passed to Facebook or Twitter', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off' %></li>
 			
 		<h4>Attach a photo or video</h4>
-		<li><input placeholder="Attach a photo/video" id="photo" name="photo" type="file" /></li>
-		<li><%= f.submit %></li>
-	</ul> 
-<% end %>
-
-<% if @milestone.id? %>
-	<ul class="edgetoedge plastic">
-		<li><%= button_to "Delete", {:action => :destroy, :id => @milestone.id}, :method => :delete %></li>
+		<li><input placeholder="Attach a photo/video" id="photo" name="photo" type="file" /></li>	
+		<li><%= link_to "Submit", "#", {:class => 'submit greenButton'} %></li>
+		<% if @milestone.id %>
+			<li><%= link_to "Delete", {:action => :destroy, :id => @milestone.id}, {:class => 'redButton', :method => :delete} %></li>
+		<% end %>
 	</ul>
 <% end %>
+
 
