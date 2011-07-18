@@ -7,10 +7,9 @@
 	<div id="notice"><%= notice %></div>
 	<div> 
 		<ul class="edgetoedge"> 
-			<% if @milestone.milestone_date %>
-				<li>On <%= @milestone.milestone_date %> this truly happened.....</li>
-			<% end %>
-			</li><%= @milestone.description %></li> 
+			<li>
+				<% if @milestone.milestone_date %>On <%= @milestone.milestone_date %> <% end %><%= @milestone.description %>
+			</li> 
 			<li><%= image_tag @milestone.file_link if @milestone.file_link %></li> 
 			<li class="img">
 				<img src="images/facebook.png" alt="Share this on Facebook"/>
