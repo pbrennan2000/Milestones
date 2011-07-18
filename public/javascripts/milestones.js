@@ -1,8 +1,9 @@
 var jQT = $.jQTouch({
-	icon: 'images/milestone_logo.png', 
-	startupScreen: 'images/milestone_logo.png',
+	icon: 'images/milestone_logo.png',
+	addGlossToIcon: true, 
 	statusBar: 'black',
-	initialPageId: 'login'
+	initialPageId: 'home',
+	preloadImages: []
 });
 
 var dateId = "milestone_date"; // default the one we will use most often
