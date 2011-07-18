@@ -1,0 +1,18 @@
+<div id="milestones">
+	<div class="toolbar"> 
+		<h1>Kenji!!</h1> 
+		<%= link_to "Back", nil, :class => "button back" %>
+		<%= link_to "+", new_milestone_path, :class => 'button add slideup' %>
+	</div>
+	<div> 
+		<ul class="edgetoedge">
+			<% @milestones.each do |milestone| %> 
+				<li class="arrow">
+					<%= link_to(milestone) do %>
+						<%= milestone.name %><small><%= milestone.milestone_date %></small>
+					<% end %>
+				</li> 
+			<% end %>
+		</ul> 
+	</div> 
+</div>

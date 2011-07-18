@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<link type="text/css" rel="stylesheet" media="screen" href="/public/lib/jQTouch/jqtouch/jqtouch.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="/public/lib/jQTouch/themes/apple/theme.css"> 
+		<link type="text/css" rel="stylesheet" media="screen" href="/public/lib/sw/spinningwheel.css"  />
+		<link type="text/css" rel="stylesheet" media="screen" href="/public/stylesheets/milestones.css"  />
+
+		<script type="text/javascript" src="/public/lib/jQTouch/jqtouch/jquery-1.4.2.js"></script> 
+		<script type="text/javascript" src="/public/lib/jQTouch/jqtouch/jqtouch.js"></script>
+		<script type="text/javascript" src="/public/lib/sw/spinningwheel.js"></script> 
+		<script type="text/javascript" src="/public/javascripts/milestones.js"></script>
+
+		<title>Milestones</title>
+	</head>
+
+	<body>
+		<div id="home">
+			<div class="toolbar">
+				<h1>Milestones</h1> 
+				<a class="button flip" href="#settings">Settings</a> 
+			</div> 
+			<ul class="edgetoedge"> 
+				<li class="arrow"><a href="#about">About</a></li> 
+				<li class="arrow"><a href="#login">Login</a></li> 
+				<li class="arrow"><%= link_to "Milestones", milestone_path %></li> 
+			</ul>
+		</div>
+		
+		<div id="login">
+			<div class="toolbar">
+				<h1>Sign In</h1>
+				<a class="button back" href="#">Back</a> 
+			</div>
+			<form method="post">
+				<ul class="edgetoedge">
+					<li><h4>Sign in or Sign Up</h4></li>
+					<li>
+						<ul class="plastic">
+							<li><input placeholder="email" type="text" id="username" name="username" autocapitalize="off" autocomplete="off" autocorrect="off"  required="required" /></li>
+							<li><input placeholder="password" type="password" id="password" name="password" autocomplete="off" required="required" /></li>
+						</ul>
+					</li>												
+					<li><input type="submit" name="action" value="Sign In" /></li> 
+				</ul>
+			</form>
+		</div>
+
+		<div id="about"> 
+			<div class="toolbar"> 
+				<h1>About</h1> 
+				<a class="button back" href="#">Back</a> 
+			</div> 
+			<div><p>Track your baby's milestones</p></div> 
+		</div>
+
+		<div id="settings"> 
+			<div class="toolbar"> 
+				<h1>Settings</h1> 
+				<a class="button cancel" href="#">Cancel</a> 
+			</div> 
+			<form method="post"> 
+				<ul class="edgetoedge"> 
+					<li> 
+						<h4>Your Child's Name</h4> 
+						<ul class="plastic"> 
+							<li><input placeholder="First" type="text" id="firstname" name="firstname" autocapitalize="off" autocomplete="off" autocorrect="off" /></li> 
+							<li><input placeholder="Middle" type="text" id="middlename" name="middlename" autocapitalize="off" autocomplete="off" autocorrect="off" /></li> 
+							<li><input placeholder="Last" type="text" id="lastname" name="middlename" autocapitalize="off" autocomplete="off" autocorrect="off" /></li> 
+						</ul> 
+					</li> 
+					<li> 
+						<h4>Date of Birth</h4> 
+						<ul class="plastic"> 
+							<li><input placeholder="Birth Date" type="text" id="birthday" name="birthday" autocapitalize="off" autocomplete="off" autocorrect="off" onfocus="openDate(this.id)" readonly="true" /></li> 
+						</ul> 
+					</li> 
+					<li><input type="submit" name="action" value="Save Changes" /></li> 
+				</ul> 
+			</form> 
+		</div>
+
+		<div id="milestones"> 
+			<div class="toolbar"> 
+				<h1>Kenji!!</h1> 
+				<a class="button back" href="#">Back</a> 
+				<a class="button add slideup" href="#createEntry">+</a> 
+			</div> 
+			<div> 
+				<ul class="edgetoedge"> 
+					<li class="arrow"><a id="0" href="#milestone">Birth Day<span class="right-line">5/7/2011</span></a></li> 
+					<li class="arrow"><a id="1" href="#milestone">First Roll Over<span class="right-line">6/7/2011</span></a></li> 
+					<li class="arrow"><a id="2" href="#milestone">First Crawl<span class="right-line">9/7/2011</span></a></li> 
+					<li class="arrow"><a id="3" href="#milestone">First Words<span class="right-line">12/20/2011</span></a></li> 
+					<li class="arrow"><a id="4" href="#milestone">First Steps<span class="right-line">3/22/2010</span></a></li> 
+				</ul> 
+			</div> 
+		</div>
+
+		<div id="milestone"> 
+			<div class="toolbar"> 
+				<h1>Milestone Name</h1> 
+				<a class="button back" href="#">Back</a> 
+				<a class="button flipleft" href="#createEntry">Edit</a> 
+			</div> 
+			<div> 
+				<ul class="edgetoedge"> 
+					<li>Date: Text Blurb of the description of the milestone</li> 
+					<li>Photo (or link to photo)</li> 
+					<li class="img">
+						<img src="img/facebook.png" alt="Share this on Facebook"/>
+						<span class="right-item"><img src="img/twitter.png" alt="Share this on Twitter" />
+					</li> 
+				</ul> 
+			</div> 
+		</div>
+
+		<div id="createEntry"> 
+			<div class="toolbar"> 
+				<h1>Create a Milestone</h1> 
+				<a class="button cancel" href="#">Cancel</a> 
+			</div> 
+			<form method="post" action="save.php"> 
+				<ul class="edgetoedge plastic"> 
+					<h4>Milestone Date</h4> 
+					<li><input placeholder="Milestone Date" type="text" id="milestone_date" name="milestone_date" autocapitalize="off" autocomplete="off" autocorrect="off" onfocus="openDate(this.id)" readonly="true" /></li>
+					<h4>Milestone Type/Name</h4>
+					<li>
+						<select id="milestone_type" name="milestone_type">
+							<optgroup label="Choose a Milestone">
+								<option value="birth_day">Birth Day</option>
+								<option value="first_roll_over">First Roll Over</option>
+								<option value="first_crawl">First Crawl</option>
+								<option value="first_words">First Words</option>
+								<option value="first_steps">First Steps</option>
+							</optgroup>
+						</select>
+					</li>
+					<h4>Describe this Milestone!</h4> 
+					<li><textarea placeholder="Describe the milestone, this description will be the text posted to Facebook or twitter"  id="description" name="description" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea></li>
+					<h4>Attach a photo or video</h4>
+					<li><input placeholder="Attach a photo/video" id="photo" name="photo" type="file" /></li>
+					<li><input type="submit" name="action" value="Save Changes" /></li> 
+				</ul> 
+			</form> 
+		</div> 
+	</body> 
+</html>
+

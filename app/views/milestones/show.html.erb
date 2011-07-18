@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @milestone.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @milestone.description %>
+</p>
+
+<p>
+  <b>File link:</b>
+  <%= @milestone.file_link %>
+</p>
+
+<p>
+  <b>Posts to facebook:</b>
+  <%= @milestone.posts_to_facebook %>
+</p>
+
+<p>
+  <b>Posts to twitter:</b>
+  <%= @milestone.posts_to_twitter %>
+</p>
+
+
+<%= link_to 'Edit', edit_milestone_path(@milestone) %> |
+<%= link_to 'Back', milestones_path %>

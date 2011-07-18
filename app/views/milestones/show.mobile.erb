@@ -1,0 +1,18 @@
+<div id="milestone"> 
+	<div class="toolbar"> 
+		<h1><%= @milestone.name %></h1> 
+		<%= link_to "Back", nil, :class => "button back" %>
+		<%= link_to "Edit", edit_milestone_path(@milestone), :class => 'button slideup' %>
+	</div> 
+	<div id="notice"><%= notice %></div>
+	<div> 
+		<ul class="edgetoedge"> 
+			<li><%= @milestone.milestone_date %><%= @milestone.milestone_date? ? ":" : ""%> <%= @milestone.description %></li> 
+			<li><%= image_tag @milestone.file_link if @milestone.file_link %></li> 
+			<li class="img">
+				<img src="images/facebook.png" alt="Share this on Facebook"/>
+				<span class="right-item"><img src="images/twitter.png" alt="Share this on Twitter" />
+			</li> 
+		</ul> 
+	</div> 
+</div>

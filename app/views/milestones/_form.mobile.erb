@@ -1,0 +1,32 @@
+<%= form_for(@milestone) do |f| %>
+  	<ul class="edgetoedge plastic"> 
+		<h4>Milestone Date</h4> 
+		<li><%= f.text_field :milestone_date, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
+			
+		<h4>Milestone Type/Name</h4>
+		<% if @options_for_select %>
+			<li>Use an existing milestone.....</li>
+			<li>	
+				<%= f.select :name, options_for_select(@options_for_select), {}, {:id => :name1, :onselect => "check_add_new();"} %>
+			</li>
+		<% end %>
+		<li>Or, add a new one.....</li>
+		<li>
+			<%= f.text_field :name, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :placeholder => 'Add A New Milestone', :id => :name2, :hidden => :true %>
+		</li>
+	
+		<h4>Describe this Milestone!</h4> 
+		<li><%= f.text_area :description, :placeholder => 'Describe this milestone, the description will be passed to Facebook or Twitter', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off' %></li>
+			
+		<h4>Attach a photo or video</h4>
+		<li><input placeholder="Attach a photo/video" id="photo" name="photo" type="file" /></li>
+		<li><%= f.submit %></li>
+	</ul> 
+<% end %>
+
+<% if @milestone.id? %>
+	<ul class="edgetoedge plastic">
+		<li><%= button_to "Delete", {:action => :destroy, :id => @milestone.id}, :method => :delete %></li>
+	</ul>
+<% end %>
+
