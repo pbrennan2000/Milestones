@@ -8,7 +8,7 @@
 	<div> 
 		<ul class="edgetoedge"> 
 			<li>
-				<% if @milestone.milestone_date %>On <%= @milestone.milestone_date %> <% end %><%= @milestone.description %>
+				<p class="cl-font"><% if @milestone.milestone_date %>On <%= @milestone.milestone_date %> <% end %><%= @milestone.description %></p>
 			</li> 
 			<li><%= image_tag @milestone.file_link if @milestone.file_link %></li> 
 			<li class="img">
