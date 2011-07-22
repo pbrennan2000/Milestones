@@ -4,16 +4,18 @@
 		<li><%= f.text_field :milestone_date, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
 			
 		<h4>Milestone Type/Name</h4>
-		<% if @options_for_select %>
+		<div id="selectbox">
 			<li>Use an existing milestone.....</li>
 			<li>	
-				<%= f.select :name, options_for_select(@options_for_select), {}, {:id => :name1, :onselect => "check_add_new();"} %>
+				<%= f.select :name, options_for_select(@options_for_select), {}, {:id => :name1} %>
 			</li>
-		<% end %>
-		<li>Or, add a new one.....</li>
-		<li>
-			<%= f.text_field :name, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :placeholder => 'Add A New Milestone', :id => :name2, :hidden => :true %>
-		</li>
+		</div>
+		<div id="textbox">
+			<li>Or, add a new one.....</li>
+			<li>
+				<%= f.text_field :name, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :placeholder => 'Add A New Milestone', :id => :name2, :hidden => :true %>
+			</li>
+		</div>
 	
 		<h4>Describe this Milestone!</h4> 
 		<li><%= f.text_area :description, :placeholder => 'Describe this milestone, the description will be passed to Facebook or Twitter', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off' %></li>
@@ -22,7 +24,7 @@
 		<li><input placeholder="Attach a photo/video" id="photo" name="photo" type="file" /></li>	
 		<li><%= link_to "Submit", "#", {:class => 'submit greenButton'} %></li>
 		<% if @milestone.id %>
-			<li><%= link_to "Delete", {:action => :destroy, :id => @milestone.id}, {:class => 'redButton', :method => :delete} %></li>
+			<li><%= link_to "Delete", @milestone, :method => :delete, :class => :redButton, :confirm => "Are you sure you want to delete this milestone? This action cannot be undone."%></li>
 		<% end %>
 	</ul>
 <% end %>

@@ -1,4 +1,5 @@
-var jQT = $.jQTouch({
+var $j = jQuery.noConflict();
+var jQT = $j.jQTouch({
 	icon: 'images/milestone_logo.png',
 	startupScreen: 'images/milestone_splashscreen.png',
 	addGlossToIcon: true, 
@@ -6,6 +7,19 @@ var jQT = $.jQTouch({
 	initialPageId: 'home',
 	preloadImages: []
 });
+
+/*
+$j(document).ready(function($) {
+	// put a prevent default handler on the delete button and instead, build up
+	// a restful form for posting to the milestones
+	$('body').bind('change', function(e) {
+		if ($(e.target).is("#name1")) {
+			alert($("#name1").val());
+		}
+	});
+
+});
+*/
 
 var dateId = "milestone_date"; // default the one we will use most often
 

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/controllers/home_controller.rb</string>
+	<string>public/javascripts/milestones.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -82,7 +82,7 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>86</integer>
+				<integer>53</integer>
 				<key>line</key>
 				<integer>24</integer>
 			</dict>
@@ -99,20 +99,6 @@
 				<integer>31</integer>
 				<key>line</key>
 				<integer>3</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/views/milestones/show.mobile.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>134</integer>
-				<key>line</key>
-				<integer>10</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -138,14 +124,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>52</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>2</integer>
+				<integer>14</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<key>public/jqtouch/jqtouch.css</key>
 		<dict>
@@ -182,30 +168,28 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>35</integer>
 				<key>line</key>
-				<integer>63</integer>
+				<integer>448</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>45</integer>
-			<key>selectFrom</key>
+			<integer>44</integer>
+		</dict>
+		<key>public/jqtouch/jquery-1.4.2.js</key>
+		<dict>
+			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>16</integer>
+				<integer>29</integer>
 				<key>line</key>
-				<integer>63</integer>
+				<integer>5442</integer>
 			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>63</integer>
-			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>5424</integer>
 		</dict>
 		<key>public/jqtouch/themes/apple/theme.css</key>
 		<dict>
@@ -242,9 +226,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>36</integer>
+				<integer>13</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -254,19 +238,10 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/controllers/milestones_controller.rb</string>
-		<string>app/controllers/home_controller.rb</string>
-		<string>app/views/milestones/index.mobile.erb</string>
-		<string>app/views/milestones/_form.mobile.erb</string>
-		<string>app/views/milestones/show.mobile.erb</string>
 		<string>public/javascripts/milestones.js</string>
-		<string>public/jqtouch/jqtouch.css</string>
-		<string>public/jqtouch/themes/apple/theme.css</string>
-		<string>public/stylesheets/milestones.css</string>
-		<string>app/views/layouts/application.mobile.erb</string>
 		<string>public/jqtouch/jqtouch.js</string>
-		<string>config/routes.rb</string>
-		<string>app/views/home/about.mobile.erb</string>
+		<string>app/views/milestones/_form.mobile.erb</string>
+		<string>public/jqtouch/jquery-1.4.2.js</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

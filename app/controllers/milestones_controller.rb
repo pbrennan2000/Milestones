@@ -93,8 +93,13 @@ class MilestonesController < ApplicationController
     @milestone.destroy
 
     respond_to do |format|
-      format.html { redirect_to(milestones_url) }
-      format.mobile {redirect_to(milestones_path)}
+      format.html { redirect_to :action => :index }
+      format.mobile { 
+        # TODO:  Find a better way to do this, are only recalling it here, rather than
+        # a redirect because we need to override and render the actual layout again
+        @milestones = Milestone.all
+        render :action => :index, :layout => true 
+      }
       format.xml  { head :ok }
     end
   end
