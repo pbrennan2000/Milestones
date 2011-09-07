@@ -1,8 +1,8 @@
 <div id="milestone"> 
 	<div class="toolbar"> 
-		<h1><%= @milestone.name %></h1> 
+		<h1><%= @first_name %><%= @milestone.name %></h1> 
 		<%= link_to "List", milestones_path, :class => 'button leftButton slideright' %>
-		<%= link_to "Edit", edit_milestone_path(@milestone), :class => 'button slideup' %>
+		<%= link_to "Edit", edit_milestone_path(@milestone), :class => 'button slideup', :id => :edit %>
 	</div> 
 	<div id="notice"><%= notice %></div>
 	<div> 

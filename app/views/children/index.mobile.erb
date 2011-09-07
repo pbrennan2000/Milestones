@@ -1,0 +1,15 @@
+<div id="children">
+	<div class="toolbar"> 
+		<%= link_to "Home", home_path, :class => "button leftButton slideright" %>
+		<%= link_to "+", new_child_path, :class => 'button add slideup', :id => :add %>
+	</div>
+	<div> 
+		<ul class="edgetoedge">
+			<% @children.each do |child| %> 
+				<li class="arrow">
+					<%= link_to(child) do %><%= child.first_name %><% end %>
+				</li> 
+			<% end %>
+		</ul> 
+	</div> 
+</div>

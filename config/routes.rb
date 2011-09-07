@@ -1,4 +1,6 @@
 Milestones::Application.routes.draw do
+  resources :children
+
   resources :milestones
 
   get "home/index"

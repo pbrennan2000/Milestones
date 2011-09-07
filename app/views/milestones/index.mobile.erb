@@ -1,12 +1,20 @@
 <div id="milestones">
 	<div class="toolbar"> 
-		<h1>Kenji!!</h1> 
+		<h1>All Milestones</h1> 
 		<%= link_to "Home", home_path, :class => "button leftButton slideright" %>
-		<%= link_to "+", new_milestone_path, :class => 'button add slideup' %>
+		<%= link_to "+", new_milestone_path, :class => 'button add slideup', :id => :add %>
 	</div>
 	<div> 
 		<ul class="edgetoedge">
+			<% currentChildId = -1 %>
 			<% @milestones.each do |milestone| %> 
+				<% if milestone.child_id != currentChildId 
+					currentChildId = milestone.child_id 
+					if (milestone.child)
+						%>
+						<h4><%= milestone.child.first_name %></h4>
+					<% end %>
+				<% end %>
 				<li class="arrow">
 					<%= link_to(milestone) do %>
 						<%= milestone.name %><small><%= milestone.milestone_date %></small>

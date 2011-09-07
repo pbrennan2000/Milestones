@@ -1,20 +1,29 @@
 <%= form_for(@milestone) do |f| %>
   	<ul class="edgetoedge plastic"> 
+  		<li><%= f.error_messages %></li>
+  		<h4>Milestone For</h4>
+  		<div id="childselect">
+  			<li>Select Child</li>
+  			<li><%= f.select :child_id, @children %></li>
+  		</div>
 		<h4>Milestone Date</h4> 
-		<li><%= f.text_field :milestone_date, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
+		<li><%= f.text_field :milestone_date, :id => 'milestone_date', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
 			
 		<h4>Milestone Type/Name</h4>
 		<div id="selectbox">
-			<li>Use an existing milestone.....</li>
+			<li>Select a Milestone</li>
 			<li>	
 				<%= f.select :name, options_for_select(@options_for_select), {}, {:id => :name1} %>
 			</li>
 		</div>
 		<div id="textbox">
-			<li>Or, add a new one.....</li>
+			<li>Add a new Milestone</li>
 			<li>
-				<%= f.text_field :name, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :placeholder => 'Add A New Milestone', :id => :name2, :hidden => :true %>
+				<%= f.text_field :name, :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :placeholder => 'Add A New Milestone', :id => :name2 %>
 			</li>
+			<li>
+				<%= link_to "Use Existing", "#", :id => :useExisting %>
+			<li>
 		</div>
 	
 		<h4>Describe this Milestone!</h4> 

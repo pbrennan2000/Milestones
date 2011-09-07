@@ -1,0 +1,13 @@
+<div id="child"> 
+	<div class="toolbar"> 
+		<h1><%= @child.first_name %></h1> 
+		<%= link_to "List", children_path, :class => 'button leftButton slideright' %>
+		<%= link_to "Edit", edit_child_path(@child), :class => 'button slideup', :id => :edit %>
+	</div> 
+	<div id="notice"><%= notice %></div>
+	<div> 
+		<ul class="edgetoedge"> 
+			<li><p class="cl-font"><%= @child.first_name %> <%= @child.middle_name %> <%= @child.last_name %></p></li> 
+		</ul> 
+	</div> 
+</div>

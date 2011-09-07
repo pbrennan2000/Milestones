@@ -8,19 +8,42 @@ var jQT = $j.jQTouch({
 	preloadImages: []
 });
 
-/*
+
 $j(document).ready(function($) {
-	// put a prevent default handler on the delete button and instead, build up
-	// a restful form for posting to the milestones
-	$('body').bind('change', function(e) {
-		if ($(e.target).is("#name1")) {
-			alert($("#name1").val());
+
+	$('#createEntry').live('pageAnimationEnd', function() {
+		$('#editEntry').remove();
+
+		// Make sure that name2 is hidden
+		toggleElements("#name2", "#name1", "name", "milestone[name]", $);
+	});
+	
+	$('#editEntry').live('pageAnimationEnd', function() {
+		$('#createEntry').remove();
+		toggleElements("#name2", "#name1", "name", "milestone[name]", $);
+	});
+	
+	$('#useExisting').live('click', function() {
+		toggleElements("#name2", "#name1", "name", "milestone[name]", $);
+	});
+	
+	$('#name1').live('change', function() {
+		if ($(this).val() == "1") {
+			toggleElements('#name1', '#name2', "name", "milestone[name]", $);
 		}
 	});
-
 });
-*/
 
+
+function toggleElements(el1, el2, attrName, attrVal, $) {	
+	$(el1).attr(attrName, "tmp");
+	$(el2).attr(attrName, attrVal);
+	
+	// Now hide el1 parent container and show el2 parent container
+	$(el1).closest("div").hide();
+	$(el2).closest("div").show();
+}
+	
 var dateId = "milestone_date"; // default the one we will use most often
 
 function openDate(id) {
@@ -44,13 +67,12 @@ function openDate(id) {
 
 	// set the date id to the correct element we are using for the wheel
 	dateId = id;
-	
-	for( var i = 1; i < 32; i += 1 ) {
-		days[i] = i;
+	for( var z = 1; z < 32; z += 1 ) {
+		days[z] = z;
 	}
 
-	for( i = now.getFullYear()-100; i < now.getFullYear()+1; i += 1 ) {
-		years[i] = i;
+	for( var p = now.getFullYear()-100; p < now.getFullYear()+1; p += 1 ) {
+		years[p] = p;
 	}
 	
 
@@ -64,24 +86,15 @@ function openDate(id) {
 	SpinningWheel.open();
 }
 
+
 function done() {
 	var results = SpinningWheel.getSelectedValues();
-	$("#" + dateId).val(results.values[1] + " " + results.values[2] + ", " + results.values[0]);
+	$j("#" + dateId).val(results.values[1] + " " + results.values[2] + ", " + results.values[0]);
 	SpinningWheel.close();
 }
 
 function cancel() {
 	SpinningWheel.close();
-}
-
-function check_add_new() {
-//	if ($("#name1").val() == "Add New") {
-		// remove the hidden attribute for name 2 and move the focus
-//		$("#name2").attr("hidden", "false");
-		
-		// Make the select box hidden 
-		$("#name1").hide();
-//	}
 }
 
 window.addEventListener('load', function(){ setTimeout(function(){ window.scrollTo(0,0); }, 100); }, true);

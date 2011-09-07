@@ -3,6 +3,7 @@ class MilestonesController < ApplicationController
   # GET /milestones.xml
   def index
     @milestones = Milestone.all
+    @milestones.sort! { |a,b| a.child_id <=> b.child_id }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,10 @@ class MilestonesController < ApplicationController
   # GET /milestones/1.xml
   def show
     @milestone = Milestone.find(params[:id])
+    @first_name = ""
+    if @milestone.child
+      @first_name = @milestone.child.first_name + " - "
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +32,7 @@ class MilestonesController < ApplicationController
   # GET /milestones/new.xml
   def new
     @milestone = Milestone.new
+    @children = Child.all.collect {|c| [c.first_name, c.id]}
     @options_for_select = get_milestone_options
 
     respond_to do |format|
@@ -41,6 +47,7 @@ class MilestonesController < ApplicationController
   # GET /milestones/1/edit
   def edit
     @milestone = Milestone.find(params[:id])
+    @children = Child.all.collect {|c| [c.first_name, c.id]}
     @options_for_select = get_milestone_options
     
     respond_to do |format|
@@ -61,7 +68,11 @@ class MilestonesController < ApplicationController
         format.xml  { render :xml => @milestone, :status => :created, :location => @milestone }
       else
         format.html { render :action => "new" }
-        format.mobile { render :action => "new", :layout => false }
+        format.mobile { 
+        	@options_for_select = get_milestone_options
+          @children = Child.all.collect {|c| [c.first_name, c.id]}
+        	render :action => "new", :layout => false 
+        }
         format.xml  { render :xml => @milestone.errors, :status => :unprocessable_entity }
       end
     end
@@ -80,7 +91,11 @@ class MilestonesController < ApplicationController
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.mobile { render :action => "edit", :layout => false, :notice => 'Errors encountered, please correct them' }  
+        format.mobile { 
+        	@options_for_select = get_milestone_options
+        	@children = Child.all.collect {|c| [c.first_name, c.id]}
+        	render :action => "edit", :layout => false, :notice => 'Errors encountered, please correct them' 
+        }  
         format.xml  { render :xml => @milestone.errors, :status => :unprocessable_entity }
       end
     end
@@ -98,6 +113,7 @@ class MilestonesController < ApplicationController
         # TODO:  Find a better way to do this, are only recalling it here, rather than
         # a redirect because we need to override and render the actual layout again
         @milestones = Milestone.all
+        @milestones.sort! { |a, b| a.child_id <=> b.child_id }
         render :action => :index, :layout => true 
       }
       format.xml  { head :ok }
@@ -114,7 +130,8 @@ class MilestonesController < ApplicationController
     milestone_names = Milestone.find_distinct_milestones
     
     if milestone_names
-      option_hash["Add New"] = "Add New"
+      option_hash["Please Select"] = ""
+      option_hash["Add New"] = "1"
     end
     
     # now convnert this into a name/value hash. Doing it this way rather than options_for_colleciton so that
