@@ -1,0 +1,15 @@
+Milestones=~/Sites/milestones {
+	CD=.
+	filter="*.*"
+
+	Controllers=app/controllers CD=~/Sites/milestones/app/controllers filter="*_controller.rb" {
+		application_controller.rb
+		home_controller.rb
+		login_controller.rb
+		milestones_controller.rb
+	}	
+	Views=app/views CD=~/Sites/milestones/app/views filter="*" {
+	}
+	Models=app/models CD=~/Sites/milestones/app/models filter="*.rb" {
+	}
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110825110609) do
+ActiveRecord::Schema.define(:version => 20110907003738) do
 
   create_table "children", :force => true do |t|
     t.string   "first_name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20110825110609) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "milestone_date"
-    t.integer  "child_id"
+    t.integer  "child_id",          :default => 0
   end
 
 end

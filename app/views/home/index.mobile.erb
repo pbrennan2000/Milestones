@@ -1,11 +1,15 @@
-<div id="home">
-	<div class="toolbar">
+<div data-role="page">
+	<div data-role="header">
  		<h1>Milestones</h1>
-		<%= link_to "Children", children_path, :class => "button slideleft" %></div>
-	<ul class="edgetoedge">
-   		<li class="arrow"><%= link_to "About", about_path %></li>
-   		<li class="arrow"><a href="#login">Login</a></li>
-   		<li class="arrow"><%= link_to "Milestones", milestones_path %></li>
-	</ul>
+		<%= link_to "Children", children_path, :class => "ui-btn-right", "data-transition" => "slideup"%>
+	</div>
+	
+	<div data-role="content">
+		<ul data-role="listview">
+   			<li><%= link_to "About", about_path %></li>
+   			<li><%= link_to "Login", login_path %></li>
+   			<li><%= link_to "Milestones", milestones_path %></li>
+		</ul>
+	</div>
 </div>
 

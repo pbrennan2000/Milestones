@@ -1,20 +1,16 @@
-<div id="milestone"> 
-	<div class="toolbar"> 
+<div data-role="page"> 
+	<div data-role="header"> 
 		<h1><%= @first_name %><%= @milestone.name %></h1> 
-		<%= link_to "List", milestones_path, :class => 'button leftButton slideright' %>
-		<%= link_to "Edit", edit_milestone_path(@milestone), :class => 'button slideup', :id => :edit %>
+		<%= link_to "List", milestones_path, "data-direction" => "reverse" %>
+		<%= link_to "Edit", edit_milestone_path(@milestone), "data-transition" => "slideup" %>
 	</div> 
-	<div id="notice"><%= notice %></div>
-	<div> 
-		<ul class="edgetoedge"> 
+	<div data-role="content">
+		<div id="notice"><%= notice %></div>
+		<ul data-role="listview"> 
 			<li>
-				<p class="cl-font"><% if @milestone.milestone_date %>On <%= @milestone.milestone_date %> <% end %><%= @milestone.description %></p>
+				<p><% if @milestone.milestone_date %>On <%= @milestone.milestone_date %> <% end %><%= @milestone.description %></p>
 			</li> 
 			<li><%= image_tag @milestone.file_link if @milestone.file_link %></li> 
-			<li class="img">
-				<img src="images/facebook.png" alt="Share this on Facebook"/>
-				<span class="right-item"><img src="images/twitter.png" alt="Share this on Twitter" />
-			</li> 
 		</ul> 
 	</div> 
 </div>

@@ -2,7 +2,7 @@ Milestones::Application.routes.draw do
   resources :children
 
   resources :milestones
-
+  
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -59,6 +59,7 @@ Milestones::Application.routes.draw do
   # Create a new home path action so that we can link to the Home page without the layout
   match 'home' => 'home#home', :as => :home
   match 'about' => 'home#about', :as => :about
+  match 'login' => 'login#index', :as => :login
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,21 +1,21 @@
-<div id="milestones">
-	<div class="toolbar"> 
+<div data-role="page">
+	<div data-role="header"> 
 		<h1>All Milestones</h1> 
-		<%= link_to "Home", home_path, :class => "button leftButton slideright" %>
-		<%= link_to "+", new_milestone_path, :class => 'button add slideup', :id => :add %>
+		<%= link_to "Home", home_path, "data-direction" => "reverse" %>
+		<%= link_to "+", new_milestone_path, "data-transition" => "slideup" %>
 	</div>
-	<div> 
-		<ul class="edgetoedge">
+	<div data-role="content"> 
+		<ul data-role="listview">
 			<% currentChildId = -1 %>
 			<% @milestones.each do |milestone| %> 
 				<% if milestone.child_id != currentChildId 
 					currentChildId = milestone.child_id 
 					if (milestone.child)
 						%>
-						<h4><%= milestone.child.first_name %></h4>
+						<li role="list-divider"><%= milestone.child.first_name %></li>
 					<% end %>
 				<% end %>
-				<li class="arrow">
+				<li>
 					<%= link_to(milestone) do %>
 						<%= milestone.name %><small><%= milestone.milestone_date %></small>
 					<% end %>

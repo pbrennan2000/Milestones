@@ -1,9 +1,9 @@
-<div id="editChild">
-	<div class="toolbar"> 
+<div data-role="page">
+	<div data-role="header"> 
 		<h1>Edit this Child!!!</h1> 
-		<%= link_to "Cancel", nil, :class => "button cancel" %>
+		<%= link_to "Cancel", @child, "data-icon" => "delete", "data-direction" => "reverse" %>
 	</div>
-	<div>
+	<div data-role="content">
 		<%= render 'form' %>
 	</div>
 </div>

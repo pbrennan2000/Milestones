@@ -1,12 +1,13 @@
-<div id="children">
-	<div class="toolbar"> 
-		<%= link_to "Home", home_path, :class => "button leftButton slideright" %>
-		<%= link_to "+", new_child_path, :class => 'button add slideup', :id => :add %>
+<div data-role="page">
+	<div data-role="header">
+		<h1>Children</h1> 
+		<%= link_to "Home", home_path, "data-direction" => "reverse" %>
+		<%= link_to "+", new_child_path, "data-transition" => "slideup" %>
 	</div>
-	<div> 
-		<ul class="edgetoedge">
+	<div data-role="content"> 
+		<ul data-role="listview">
 			<% @children.each do |child| %> 
-				<li class="arrow">
+				<li>
 					<%= link_to(child) do %><%= child.first_name %><% end %>
 				</li> 
 			<% end %>

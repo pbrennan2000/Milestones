@@ -1,9 +1,9 @@
-<div id="createEntry">
-	<div class="toolbar"> 
+<div data-role="page">
+	<div data-role="header"> 
 		<h1>Create!!!</h1> 
-		<%= link_to "Cancel", nil, :class => "button cancel" %>
+		<%= link_to "Cancel", nil, "data-icon" => "delete", "data-direction" => "reverse" %>
 	</div>
-	<div>
+	<div data-role="content">
 		<%= render 'form' %>
 	</div>
 </div>

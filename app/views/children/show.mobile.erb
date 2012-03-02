@@ -1,13 +1,13 @@
-<div id="child"> 
-	<div class="toolbar"> 
+<div data-role="page"> 
+	<div data-role="header"> 
 		<h1><%= @child.first_name %></h1> 
-		<%= link_to "List", children_path, :class => 'button leftButton slideright' %>
-		<%= link_to "Edit", edit_child_path(@child), :class => 'button slideup', :id => :edit %>
+		<%= link_to "List", children_path, "data-direction" => "reverse" %>
+		<%= link_to "Edit", edit_child_path(@child), "data-transition" => "slideup" %>
 	</div> 
-	<div id="notice"><%= notice %></div>
-	<div> 
-		<ul class="edgetoedge"> 
-			<li><p class="cl-font"><%= @child.first_name %> <%= @child.middle_name %> <%= @child.last_name %></p></li> 
+	<div data-role="content"> 
+		<div id="notice"><%= notice %></div>
+		<ul daat-role="listview"> 
+			<li><%= @child.first_name %> <%= @child.middle_name %> <%= @child.last_name %></li> 
 		</ul> 
 	</div> 
 </div>

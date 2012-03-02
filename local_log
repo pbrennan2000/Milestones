@@ -1,0 +1,104 @@
+2011-09-07T01:05:27+00:00 app[web.1]: Started POST "/milestones/5" for 68.173.84.168 at 2011-09-06 18:05:27 -0700
+2011-09-07T01:05:27+00:00 app[web.1]:   Processing by MilestonesController#update as */*
+2011-09-07T01:05:27+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"lqlMzWZPiBIfx9rbgbPu1rChYmMv2lHusKzm7BscOtA=", "milestone"=>{"child_id"=>"2", "milestone_date"=>"", "name"=>"", "description"=>"this is baby's first poop"}, "tmp"=>"poop", "id"=>"5"}
+2011-09-07T01:05:28+00:00 app[web.1]: Rendered milestones/_form.mobile.erb (4.5ms)
+2011-09-07T01:05:28+00:00 app[web.1]: Rendered milestones/edit.mobile.erb (5.1ms)
+2011-09-07T01:05:28+00:00 app[web.1]: Completed 200 OK in 81ms (Views: 5.5ms | ActiveRecord: 64.7ms)
+2011-09-07T01:05:28+00:00 heroku[router]: POST babymilestones.heroku.com/milestones/5 dyno=web.1 queue=0 wait=0ms service=84ms status=200 bytes=2727
+2011-09-07T01:05:28+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:05:28 -0700] "POST /milestones/5 HTTP/1.1" 200 1133 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:06:57+00:00 app[web.1]: 
+2011-09-07T01:06:57+00:00 app[web.1]: 
+2011-09-07T01:06:57+00:00 app[web.1]: Started GET "/" for 68.173.84.168 at 2011-09-06 18:06:57 -0700
+2011-09-07T01:06:57+00:00 app[web.1]:   Processing by HomeController#index as HTML
+2011-09-07T01:06:57+00:00 app[web.1]: Rendered home/index.mobile.erb within layouts/application (2.1ms)
+2011-09-07T01:06:57+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+2011-09-07T01:06:57+00:00 heroku[router]: GET babymilestones.heroku.com/ dyno=web.1 queue=0 wait=0ms service=168ms status=200 bytes=1818
+2011-09-07T01:06:57+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:06:57 -0700] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:06:58+00:00 app[web.1]: 
+2011-09-07T01:06:58+00:00 app[web.1]: 
+2011-09-07T01:06:58+00:00 app[web.1]: Started GET "/milestones" for 68.173.84.168 at 2011-09-06 18:06:58 -0700
+2011-09-07T01:06:58+00:00 app[web.1]:   Processing by MilestonesController#index as */*
+2011-09-07T01:06:58+00:00 app[web.1]: Rendered milestones/index.mobile.erb (1.9ms)
+2011-09-07T01:06:58+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 2.6ms)
+2011-09-07T01:06:58+00:00 heroku[router]: GET babymilestones.heroku.com/milestones dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=568
+2011-09-07T01:07:04+00:00 app[web.1]: 
+2011-09-07T01:07:04+00:00 app[web.1]: 
+2011-09-07T01:07:04+00:00 app[web.1]: Started GET "/milestones/2" for 68.173.84.168 at 2011-09-06 18:07:04 -0700
+2011-09-07T01:07:04+00:00 app[web.1]:   Processing by MilestonesController#show as */*
+2011-09-07T01:07:04+00:00 app[web.1]:   Parameters: {"id"=>"2"}
+2011-09-07T01:07:04+00:00 a
+pp[web.1]: Rendered milestones/show.mobile.erb (0.6ms)
+2011-09-07T01:07:04+00:00 app[web.1]: Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 2.7ms)
+2011-09-07T01:07:04+00:00 heroku[router]: GET babymilestones.heroku.com/milestones/2 dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=570
+2011-09-07T01:07:04+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:07:04 -0700] "GET /milestones/2 HTTP/1.1" 200 570 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:07:07+00:00 app[web.1]: 
+2011-09-07T01:07:07+00:00 app[web.1]: 
+2011-09-07T01:07:07+00:00 app[web.1]: Started GET "/milestones/2/edit" for 68.173.84.168 at 2011-09-06 18:07:07 -0700
+2011-09-07T01:07:07+00:00 app[web.1]:   Processing by MilestonesController#edit as */*
+2011-09-07T01:07:07+00:00 app[web.1]:   Parameters: {"id"=>"2"}
+2011-09-07T01:07:07+00:00 app[web.1]: Rendered milestones/_form.mobile.erb (2.4ms)
+2011-09-07T01:07:07+00:00 app[web.1]: Rendered milestones/edit.mobile.erb (5.0ms)
+2011-09-07T01:07:07+00:00 app[web.1]: Completed 200 OK in 13ms (Views: 5.3ms | ActiveRecord: 7.0ms)
+2011-09-07T01:07:07+00:00 heroku[router]: GET babymilestones.heroku.com/milestones/2/edit dyno=web.1 queue=0 wait=0ms service=16ms status=200 bytes=2439
+2011-09-07T01:07:07+00:00 heroku[nginx]: 68.
+173.84.168 - - [06/Sep/2011:18:07:07 -0700] "GET /milestones/2/edit HTTP/1.1" 200 1054 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:07:13+00:00 app[web.1]: 
+2011-09-07T01:07:13+00:00 app[web.1]: 
+2011-09-07T01:07:13+00:00 app[web.1]: Started GET "/milestones" for 68.173.84.168 at 2011-09-06 18:07:12 -0700
+2011-09-07T01:07:13+00:00 app[web.1]:   Processing by MilestonesController#index as */*
+2011-09-07T01:07:13+00:00 app[web.1]: Rendered milestones/index.mobile.erb (1.9ms)
+2011-09-07T01:07:13+00:00 app[web.1]: Completed 200 OK in 117ms (Views: 2.3ms | ActiveRecord: 113.2ms)
+2011-09-07T01:07:13+00:00 heroku[router]: GET babymilestones.heroku.com/milestones dyno=web.1 queue=0 wait=0ms service=120ms status=200 bytes=568
+2011-09-07T01:07:13+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:07:13 -0700] "GET /milestones HTTP/1.1" 200 568 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:07:14+00:00 app[web.1]: 
+2011-09-07T01:07:14+00:00 app[web.1]: 
+2011-09-07T01:07:14+00:00 app[web.1]: Started GET "/milestones/new" for 68.173.84.168 at 2011-09-06 18:07:14 -0700
+2011-09-07
+T01:07:14+00:00 app[web.1]:   Processing by MilestonesController#new as */*
+2011-09-07T01:07:14+00:00 app[web.1]: Rendered milestones/_form.mobile.erb (18.8ms)
+2011-09-07T01:07:14+00:00 app[web.1]: Rendered milestones/new.mobile.erb (19.6ms)
+2011-09-07T01:07:14+00:00 app[web.1]: Completed   in 26ms
+2011-09-07T01:07:14+00:00 app[web.1]: 
+2011-09-07T01:07:14+00:00 app[web.1]: ActionView::Template::Error (undefined method `child_id' for #<Milestone:0x0000000290ba80>):
+2011-09-07T01:07:14+00:00 app[web.1]:     4:   		<h4>Milestone For</h4>
+2011-09-07T01:07:14+00:00 app[web.1]:     5:   		<div id="childselect">
+2011-09-07T01:07:14+00:00 app[web.1]:     6:   			<li>Select Child</li>
+2011-09-07T01:07:14+00:00 app[web.1]:     7:   			<li><%= f.select :child_id, @children %></li>
+2011-09-07T01:07:14+00:00 app[web.1]:     8:   		</div>
+2011-09-07T01:07:14+00:00 app[web.1]:     9: 		<h4>Milestone Date</h4> 
+2011-09-07T01:07:14+00:00 heroku[router]: GET babymilestones.heroku.com/milestones/new dyno=web.1 queue=0 wait=0ms service=33ms status=500 bytes=728
+2011-09-07T01:07:14+00:00 app[web.1]:     10: 		<li><%= f.text_field :milestone_date, :id => 'milestone_date', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
+2011-09-07T01:07:14+00:00 app[web.1]:   app/views/milestones/_form.mobile.erb:7:in `block in _app_views_milestones__form_mobile_erb__2847093208718698866_20491980_1098542069171368129'
+2011-09-07T01:07:14+00:00 app[web.1]:   app/views/milestones/_form.mobile.erb:1:in `_app_views_milestones__form_mobile_erb__2847093208718698866_20491980_1098542069171368129'
+2011-09-07T01:07:14+00:00 app[web.1]:   app/views/milestones/new.mobile.erb:7:in `_app_views_milestones_new_mobile_erb__937316655893843768_21485520__778290434796556015'
+2011-09-07T01:07:14+00:00 app[web.1]:   app/controllers/milestones_controller.rb:41:in `block (2 levels) in new'
+2011-09-07T01:07:14+00:00 app[web.1]:   app/controllers/milestones_controller.rb:38:in `new'
+2011-09-07T01:07:14+00:00 app[web.1]: 
+2011-09-07T01:07:14+00:00 app[web.1]: 
+2011-09-07T01:07:14+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:07:14 -0700] "GET /milestones/new HTTP/1.1" 500 728 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:07:17+00:00 app[web.1]: 
+2011-09-07T01:07:17+00:00 app[web.1]: 
+2011-09-07T01:07:17+00:00 app[web.1]: Started GET "/milestones/new" for 68.173.84.168 at 2011-09-06 18:07:17 -0700
+2011-09-07T01:07:17+00:00 app[web.1]:   Processing by MilestonesController#new as */*
+2011-09-07T01:07:17+00:00 app[web.1]: Rendered milestones/_form.mobile.erb (1.3ms)
+2011-09-07T01:07:17+00:00 app[web.1]: Rendered milestones/new.mobile.erb (1.8ms)
+2011-09-07T01:07:17+00:00 app[web.1]: Completed   in 15ms
+2011-09-07T01:07:17+00:00 app[web.1]: 
+2011-09-07T01:07:17+00:00 app[web.1]: ActionView::Template::Error (undefined method `child_id' for #<Milestone:0x0000000275a0b0>):
+2011-09-07T01:07:17+00:00 app[web.1]:     4:   		<h4>Milestone For</h4>
+2011-09-07T01:07:17+00:00 app[web.1]:     5:   		<div id="childselect">
+2011-09-07T01:07:17+00:00 app[web.1]:     6:   			<li>Select Child</li>
+2011-09-07T01:07:17+00:00 app[web.1]:     7:   			<li><%= f.select :child_id, @children %></li>
+2011-09-07T01:07:17+00:00 app[web.1]:     8:   		</div>
+2011-09-07T01:07:17+00:00 app[web.1]:     9: 		<h4>Milestone Date</h4> 
+2011-09-07T01:07:17+00:00 app[web.1]:     10: 		<li><%= f.text_field :milestone_date, :id => 'milestone_date', :autocapitalize => 'off', :autocomplete => 'off', :autocorrect => 'off', :onfocus => 'openDate(this.id)', :readonly => "true" %></li>
+2011-09-07T01:07:17+00:00 app[web.1]:   app/views/milestones/_form.mobile.erb:7:in `block in _app_views_milestones__form_mobile_erb__2847093208718698866_20491980_1098542069171368129'
+2011-09-07T01:07:17+00:00 app[web.1]:   app/views/milestones/_form.mobile.erb:1:in `_app_views_milestones__form_mobile_erb__2847093208718698866_20491980_1098542069171368129'
+2011-09-07T01:07:17+00:00 app[web.1]:   app/views/milestones/new.mobile.erb:7:in `_app_views_milestones_new_mobile_erb__937316655893843768_21485520__778290434796556015'
+2011-09-
+07T01:07:17+00:00 app[web.1]:   app/controllers/milestones_controller.rb:41:in `block (2 levels) in new'
+2011-09-07T01:07:17+00:00 app[web.1]:   app/controllers/milestones_controller.rb:38:in `new'
+2011-09-07T01:07:17+00:00 app[web.1]: 
+2011-09-07T01:07:17+00:00 app[web.1]: 
+2011-09-07T01:07:17+00:00 heroku[nginx]: 68.173.84.168 - - [06/Sep/2011:18:07:17 -0700] "GET /milestones/new HTTP/1.1" 500 728 "http://babymilestones.heroku.com/" "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5" babymilestones.heroku.com
+2011-09-07T01:07:17+00:00 heroku[router]: GET babymilestones.heroku.com/milestones/new dyno=web.1 queue=0 wait=1ms service=32ms status=500 bytes=728

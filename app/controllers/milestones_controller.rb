@@ -2,6 +2,8 @@ class MilestonesController < ApplicationController
   # GET /milestones
   # GET /milestones.xml
   def index
+    
+    # TODO; Sort by children and milestone date
     @milestones = Milestone.all
     @milestones.sort! { |a,b| a.child_id <=> b.child_id }
 
@@ -34,6 +36,7 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.new
     @children = Child.all.collect {|c| [c.first_name, c.id]}
     @options_for_select = get_milestone_options
+    @milestone.milestone_date = Date.today
 
     respond_to do |format|
       format.html # new.html.erb 
